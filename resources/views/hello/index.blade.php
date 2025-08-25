@@ -6,7 +6,7 @@
     @auth
       <a href="{{ url('/hello/logout/') }}">ログアウト</a>
     @else
-      <a href="{{ route('login') }}">ログイン</a>
+      <a href="{{ url('/hello/login') }}">ログイン</a>
        |
       <a href="{{ route('register') }}">登録</a>
     @endauth

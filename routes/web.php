@@ -25,5 +25,7 @@ Route::get('hello-component', HelloComponent::class);
 
 Route::get('hello', [HelloController::class, 'index']);
 Route::get('hello/logout', [HelloController::class, 'logout']);
+Route::get('hello/login', [HelloController::class, 'login']);
+Route::post('hello/post', [HelloController::class, 'post']);
 
 require __DIR__.'/auth.php';
