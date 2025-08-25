@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HelloController;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 use App\Livewire\HelloComponent;
@@ -21,5 +22,8 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('hello-component', HelloComponent::class);
+
+Route::get('hello', [HelloController::class, 'index']);
+Route::get('hello/logout', [HelloController::class, 'logout']);
 
 require __DIR__.'/auth.php';
