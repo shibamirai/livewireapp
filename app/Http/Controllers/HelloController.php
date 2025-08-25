@@ -11,7 +11,13 @@ class HelloController extends Controller
 {
     public function index()
     {
-        return view('hello.index');
+        if (Auth::check()) {
+            $user = Auth::user();
+            return view('hello.index', [
+                'user' => $user
+            ]);
+        }
+        return view('hello.login');
     }
 
     public function logout()

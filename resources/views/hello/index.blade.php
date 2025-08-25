@@ -12,6 +12,7 @@
     @endauth
 
     <h1>Hello World</h1>
-    <p>This is Livewire component!!</p>
+    <p>Login name: {{ $user->name }}</p>
+    <p>Login email: {{ $user->email }}</p>
   </body>
 </html>
