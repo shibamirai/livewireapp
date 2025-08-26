@@ -27,5 +27,7 @@ Route::get('hello', [HelloController::class, 'index']);
 Route::get('hello/logout', [HelloController::class, 'logout']);
 Route::get('hello/login', [HelloController::class, 'login']);
 Route::post('hello/post', [HelloController::class, 'post']);
+Route::post('hello/isuser', [HelloController::class, 'isuser']);
+Route::post('hello/isadmin', [HelloController::class, 'isadmin']);
 
 require __DIR__.'/auth.php';

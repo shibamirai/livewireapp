@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Hash;
 
 class HelloController extends Controller
@@ -46,5 +47,25 @@ class HelloController extends Controller
         } else {
             return redirect('/hello/login');
         }
+    }
+
+    public function isuser(Request $request)
+    {
+        if (Gate::allows('is-user', $request->user_id)) {
+            $result = "true";
+        } else {
+            $result = "false";
+        }
+        return "<html><body><h1>Is User: " . $result . "</h1></body></html>";
+    }
+
+    public function isadmin()
+    {
+        if (Gate::allows('is-admin')) {
+            $result = "true";
+        } else {
+            $result = "false";
+        }
+        return "<html><body><h1>Is Admin: " . $result . "</h1></body></html>";
     }
 }

@@ -14,5 +14,14 @@
     <h1>Hello World</h1>
     <p>Login name: {{ $user->name }}</p>
     <p>Login email: {{ $user->email }}</p>
+    <form action="/hello/isuser" method="post">
+      @csrf
+      <input type="number" name="user_id">
+      <button>action by user</button>
+    </form>
+    <form action="/hello/isadmin" method="post">
+      @csrf
+      <button>action by admin</button>
+    </form>
   </body>
 </html>
